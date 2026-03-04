@@ -36,7 +36,7 @@ export const Users: CollectionConfig = {
       path: '/oauth/google',
       method: 'get',
       handler: async (req) => {
-        const client_id = process.env.GOOGLE_CLIENT_ID
+        const client_id = process.env.GOOGLE_CLIENT_ID!
         const redirect_uri = `${process.env.SERVER_URL}/api/users/oauth/google/callback`
         const scope = 'https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile'
         const url = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code&scope=${scope}`
