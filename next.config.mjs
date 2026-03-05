@@ -13,6 +13,9 @@ const nextConfig = {
 
     return webpackConfig
   },
+  experimental: {
+    serverExternalPackages: ['mongodb'],
+  },
 }
 
 export default withPayload(nextConfig, { devBundleServerPackages: false })

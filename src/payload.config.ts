@@ -23,7 +23,7 @@ export default buildConfig({
   },
   collections: [Users, Media, Products, Categories, Orders],
   editor: lexicalEditor(),
-  secret: process.env.PAYLOAD_SECRET || '',
+  secret: process.env.PAYLOAD_SECRET || 'fallback-secret-for-build-purposes-only',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
