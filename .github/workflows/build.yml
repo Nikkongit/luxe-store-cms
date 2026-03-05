@@ -1,0 +1,37 @@
+name: Build and Test
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Build
+        run: pnpm run build
+        env:
+          PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET || 'dummy_secret_for_build_only' }}
+          MONGODB_URI: ${{ secrets.MONGODB_URI || 'mongodb://127.0.0.1/dummy' }}
+          SERVER_URL: ${{ secrets.SERVER_URL || 'http://localhost:3000' }}
+          NEXT_TELEMETRY_DISABLED: 1
