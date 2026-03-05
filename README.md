@@ -1,4 +1,4 @@
-# LUXE Store CMS
+# luxe-store-cms
 
 A premium e-commerce backup built with Payload CMS v3.
 
