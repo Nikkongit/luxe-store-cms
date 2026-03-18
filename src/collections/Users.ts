@@ -35,7 +35,7 @@ export const Users: CollectionConfig = {
     {
       path: '/oauth/google',
       method: 'get',
-      handler: async (req) => {
+      handler: async () => {
         const client_id = process.env.GOOGLE_CLIENT_ID!
         const redirect_uri = `${process.env.SERVER_URL}/api/users/oauth/google/callback`
         const scope = 'https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile'
@@ -47,7 +47,7 @@ export const Users: CollectionConfig = {
       path: '/oauth/google/callback',
       method: 'get',
       handler: async (req) => {
-        const { searchParams } = new URL(req.url)
+        const { searchParams } = new URL(req.url as string)
         const code = searchParams.get('code')
 
         if (!code) {
@@ -75,7 +75,7 @@ export const Users: CollectionConfig = {
           })
           const googleUser = await userResponse.json()
 
-          let user = await req.payload.find({
+          const user = await req.payload.find({
             collection: 'users',
             where: { email: { equals: googleUser.email } },
           })
@@ -95,8 +95,9 @@ export const Users: CollectionConfig = {
           // In a real scenario, you'd use req.payload.login() here to set cookies
           // For now, redirect to admin
           return Response.redirect(`${process.env.SERVER_URL}/admin`)
-        } catch (error: any) {
-          return Response.json({ message: error.message }, { status: 500 })
+        } catch (error: unknown) {
+          const message = error instanceof Error ? error.message : 'Unknown error'
+          return Response.json({ message }, { status: 500 })
         }
       },
     },
