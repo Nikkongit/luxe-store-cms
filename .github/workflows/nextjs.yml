@@ -64,17 +64,14 @@ jobs:
           cp -r .next/server/app/\(frontend\)/* out/ || true
           # Then copy the rest in case
           cp -rn .next/server/app/* out/ || true
-          # Rename root page.html to index.html
-          if [ -f "out/page.html" ]; then
-            mv out/page.html out/index.html
-          fi
-          if [ -f "out/page" ]; then
-            mv out/page out/index.html
-          fi
-          # Rename any other .html files
-          find out -name "*.html" -exec sh -c 'mv "$0" "${0%.html}"' {} \; || true
-          # Rename index to avoid it being dropped by the find command if already renamed
-          if [ -f "out/index" ]; then mv out/index out/index.html; fi
+          
+          # Rename all deep 'page.html' to 'index.html' so Github Pages resolves folders correctly
+          find out -name "page.html" -execdir mv "{}" index.html \; || true
+          # Revert any previously damaged stripping if they were caught in the previous run (just in case)
+          find out -name "page.html" -exec sh -c 'mv "$0" "$(dirname "$0")/index.html"' {} \; || true
+          
+          # The root index is already covered by the loop above, but ensure it exists
+          if [ ! -f "out/index.html" ] && [ -f "out/page.html" ]; then mv out/page.html out/index.html; fi
         env:
           PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET || 'dummy-secret-for-build' }}
           DATABASE_URI: 'mongodb://127.0.0.1/payload-build-db'
