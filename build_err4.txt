@@ -1,0 +1,119 @@
+﻿
+> luxe-store-cms@1.0.0 build D:\Company\Antigravity\ecom\my-store
+> cross-env NODE_OPTIONS="--no-deprecation --max-old-space-size=8000" next build
+
+   Ôû▓ Next.js 15.4.11
+   - Environments: .env
+
+   Creating an optimized production build ...
+ Ô£ô Compiled successfully in 16.0s
+   Linting and checking validity of types ...
+
+./src/app/(frontend)/cart/page.tsx
+16:29  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+28:29  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/(frontend)/categories/page.tsx
+7:11  Warning: 'payload' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+28:29  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/(frontend)/categories/[slug]/page.tsx
+3:10  Warning: 'notFound' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+42:37  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+43:74  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/app/(frontend)/checkout/page.tsx
+2:8  Warning: 'Link' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+71:29  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+78:29  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/(frontend)/page.tsx
+1:21  Warning: 'getHeaders' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+2:8  Warning: 'Image' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+41:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+47:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+53:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+75:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+76:56  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+80:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/(frontend)/products/page.tsx
+33:37  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+34:74  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/app/(frontend)/products/[slug]/page.tsx
+29:29  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+30:66  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/app/my-route/route.ts
+4:27  Warning: 'request' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+5:9  Warning: 'payload' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+node.exe : Failed to compile.
+At C:\Users\ross\AppData\Roam
+ing\npm\pnpm.ps1:24 char:5
++     & "node$exe"  "$basedir
+/node_modules/corepack/dist/p
+npm.js" $args
++     ~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: (Failed   
+  to compile.:String) [],    
+ RemoteException
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+
+./tests/helpers/seedUser.ts:2
+6:24
+Type error: Argument of type 
+'{ collection: "users"; 
+data: { email: string; 
+password: string; }; }' is 
+not assignable to parameter 
+of type 'Options<"users", 
+UsersSelect<false> | 
+UsersSelect<true>>'.
+  Type '{ collection: 
+"users"; data: { email: 
+string; password: string; }; 
+}' is not assignable to type 
+'{ data: DraftDataFromCollect
+ionSlug<"users">; draft: 
+true; } & { collection: 
+"users"; context?: 
+RequestContext | undefined; 
+depth?: number | undefined; 
+... 13 more ...; user?: any; 
+} & Pick<...>'.
+    Property 'draft' is 
+missing in type '{ 
+collection: "users"; data: { 
+email: string; password: 
+string; }; }' but required 
+in type '{ data: DraftDataFro
+mCollectionSlug<"users">; 
+draft: true; }'.
+
+[0m [90m 24 |[39m
+ [90m 25 |[39m   [90m// 
+Create fresh test user[39m
+[31m[1m>[22m[39m[90m 26 
+|[39m   [36mawait[39m 
+payload[33m.[39mcreate({
+ [90m    |[39m             
+           
+[31m[1m^[22m[39m
+ [90m 27 |[39m     
+collection[33m:[39m 
+[32m'users'[39m[33m,[39m
+ [90m 28 |[39m     
+data[33m:[39m 
+testUser[33m,[39m
+ [90m 29 |[39m   })[0m
+Next.js build worker exited 
+with code: 1 and signal: null
+ÔÇëELIFECYCLEÔÇë Command failed with exit code 1.
