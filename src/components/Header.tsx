@@ -10,11 +10,11 @@ export const Header = () => {
                 </Link>
                 <nav className="nav">
                     <Link href="/products">Shop All</Link>
-                    <Link href="/categories/bags">Bags</Link>
-                    <Link href="/categories/jewelry">Jewelry</Link>
+                    <Link href="/categories">Categories</Link>
                 </nav>
                 <div className="auth-links">
-                    <Link href="/admin" className="admin-btn">Portal</Link>
+                    <Link href="/cart" className="action-btn">Cart (0)</Link>
+                    <Link href="/admin" className="action-btn">Portal</Link>
                 </div>
             </div>
         </header>
