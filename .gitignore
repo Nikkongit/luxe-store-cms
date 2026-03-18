@@ -49,3 +49,7 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# SQLite Database
+payload.db
+*.db
