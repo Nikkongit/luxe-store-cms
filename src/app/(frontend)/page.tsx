@@ -22,7 +22,7 @@ export default async function HomePage() {
       <section className="hero">
         <div 
           className="hero-bg" 
-          style={{ backgroundImage: 'url(/images/hero_image.png)' }}
+          style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&q=80")' }}
         ></div>
         <div className="hero-content">
           <h1>Redefine Your Silhouette</h1>
@@ -38,19 +38,19 @@ export default async function HomePage() {
           <h2 className="section-title">Shop by Category</h2>
           <div className="categories-grid">
             <Link href="/categories/bags" className="category-card">
-              <img src="/images/bag_category.png" alt="Bags" className="category-image" />
+              <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&q=80" alt="Bags" className="category-image" />
               <div className="category-overlay">
                 <span className="category-title">Bags</span>
               </div>
             </Link>
             <Link href="/categories/jewelry" className="category-card">
-              <img src="/images/jewelry_category.png" alt="Jewelry" className="category-image" />
+              <img src="https://images.unsplash.com/photo-1515562141207-7a8ea3f3fe76?auto=format&fit=crop&q=80" alt="Jewelry" className="category-image" />
               <div className="category-overlay">
                 <span className="category-title">Jewelry</span>
               </div>
             </Link>
             <Link href="/categories/clothing" className="category-card">
-              <img src="/images/clothing_category.png" alt="Clothing" className="category-image" />
+              <img src="https://images.unsplash.com/photo-1532453288672-3a27e9be20f0?auto=format&fit=crop&q=80" alt="Clothing" className="category-image" />
               <div className="category-overlay">
                 <span className="category-title">Clothing</span>
               </div>
@@ -77,7 +77,7 @@ export default async function HomePage() {
                       alt={product.name}
                     />
                   ) : (
-                    <img src="/images/bag_category.png" alt="Placeholder" />
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80" alt="Placeholder" />
                   )}
                   {product.badge && <span className={`badge ${product.badge}`}>{product.badge}</span>}
                 </div>
