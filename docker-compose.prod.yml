@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  payload:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    restart: always
+    environment:
+      - NODE_ENV=production
+      - PAYLOAD_SECRET=${PAYLOAD_SECRET}
+      - DATABASE_URI=${DATABASE_URI:-mongodb://mongo:27017/payload-db}
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    command:
+      - --storageEngine=wiredTiger
+    volumes:
+      - mongodb_data:/data/db
+    restart: always
+    logging:
+      driver: none
+
+volumes:
+  mongodb_data:
