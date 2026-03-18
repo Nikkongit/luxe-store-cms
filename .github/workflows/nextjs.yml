@@ -61,11 +61,24 @@ jobs:
         run: |
           pnpm run build
           mkdir -p out
+          cp -r public/* out/ || true
+          mkdir -p out/_next/static
+          cp -r .next/static/* out/_next/static/ || true
+          # The main page is inside the (frontend) route group
+          cp -r .next/server/app/\(frontend\)/* out/ || true
+          # Then copy the rest in case
           cp -rn .next/server/app/* out/ || true
-          cp -rn public/* out/ || true
-          mkdir -p out/_next
-          cp -rn .next/static out/_next/static || true
+          # Rename root page.html to index.html
+          if [ -f "out/page.html" ]; then
+            mv out/page.html out/index.html
+          fi
+          if [ -f "out/page" ]; then
+            mv out/page out/index.html
+          fi
+          # Rename any other .html files
           find out -name "*.html" -exec sh -c 'mv "$0" "${0%.html}"' {} \; || true
+          # Rename index to avoid it being dropped by the find command if already renamed
+          if [ -f "out/index" ]; then mv out/index out/index.html; fi
         env:
           PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET || 'dummy-secret-for-build' }}
           DATABASE_URI: 'mongodb://127.0.0.1/payload-build-db'
