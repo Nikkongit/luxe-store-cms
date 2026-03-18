@@ -9,7 +9,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    services:
+      mongodb:
+        image: mongo:latest
+        ports:
+          - 27017:27017
     steps:
     - uses: actions/checkout@v4
     
@@ -29,4 +33,4 @@ jobs:
       run: pnpm run build
       env:
         PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET || 'dummy-secret-for-build' }}
-        DATABASE_URI: 'sqlite://payload.db'
+        DATABASE_URI: 'mongodb://127.0.0.1/payload-build-db'

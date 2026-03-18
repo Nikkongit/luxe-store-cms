@@ -14,6 +14,8 @@ services:
       - DATABASE_URI=${DATABASE_URI:-mongodb://mongo:27017/payload-db}
     depends_on:
       - mongo
+    volumes:
+      - media_data:/app/media
 
   mongo:
     image: mongo:latest
@@ -29,3 +31,4 @@ services:
 
 volumes:
   mongodb_data:
+  media_data:
