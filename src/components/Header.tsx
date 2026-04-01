@@ -11,6 +11,8 @@ export const Header = () => {
                 <nav className="nav">
                     <Link href="/products">Shop All</Link>
                     <Link href="/categories">Categories</Link>
+                    <Link href="/collections">Collections</Link>
+                    <Link href="/gender">Gender</Link>
                 </nav>
                 <div className="auth-links">
                     <Link href="/cart" className="action-btn">Cart (0)</Link>

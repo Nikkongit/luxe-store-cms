@@ -22,7 +22,7 @@ export default async function HomePage() {
       <section className="hero">
         <div 
           className="hero-bg" 
-          style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&q=80")' }}
+          style={{ backgroundImage: 'url("/images/hero.png")' }}
         ></div>
         <div className="hero-content">
           <h1>Redefine Your Silhouette</h1>
@@ -33,24 +33,25 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="section">
+      {/* Category Section with spacing */}
+      <section className="section" style={{ padding: '8rem 0' }}>
         <div className="container">
           <h2 className="section-title">Shop by Category</h2>
           <div className="categories-grid">
             <Link href="/categories/bags" className="category-card">
-              <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&q=80" alt="Bags" className="category-image" />
+              <img src="/images/bags.png" alt="Bags" className="category-image" />
               <div className="category-overlay">
                 <span className="category-title">Bags</span>
               </div>
             </Link>
             <Link href="/categories/jewelry" className="category-card">
-              <img src="https://images.unsplash.com/photo-1515562141207-7a8ea3f3fe76?auto=format&fit=crop&q=80" alt="Jewelry" className="category-image" />
+              <img src="/images/jewelry.png" alt="Jewelry" className="category-image" />
               <div className="category-overlay">
                 <span className="category-title">Jewelry</span>
               </div>
             </Link>
             <Link href="/categories/clothing" className="category-card">
-              <img src="https://images.unsplash.com/photo-1532453288672-3a27e9be20f0?auto=format&fit=crop&q=80" alt="Clothing" className="category-image" />
+              <img src="/images/women.png" alt="Clothing" className="category-image" />
               <div className="category-overlay">
                 <span className="category-title">Clothing</span>
               </div>
@@ -59,11 +60,59 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="section">
+      {/* Collections Section */}
+      <section className="section" style={{ backgroundColor: 'var(--surface)', padding: '8rem 0' }}>
+        <div className="container">
+          <h2 className="section-title">Curated Collections</h2>
+          <div className="categories-grid">
+            <Link href="/collections/winter" className="category-card">
+              <img src="/images/hero.png" alt="Winter Collection" className="category-image" />
+              <div className="category-overlay">
+                <span className="category-title">Winter '26</span>
+              </div>
+            </Link>
+            <Link href="/collections/essentials" className="category-card">
+              <img src="/images/men.png" alt="Essentials" className="category-image" />
+              <div className="category-overlay">
+                <span className="category-title">Essentials</span>
+              </div>
+            </Link>
+            <Link href="/collections/summer" className="category-card">
+              <img src="/images/women.png" alt="Summer Collection" className="category-image" />
+              <div className="category-overlay">
+                <span className="category-title">Summer '26</span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Gender Section */}
+      <section className="section" style={{ padding: '8rem 0' }}>
+        <div className="container">
+          <h2 className="section-title">Shop by Gender</h2>
+          <div className="categories-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)', gap: '4rem' }}>
+            <Link href="/gender/women" className="category-card">
+              <img src="/images/women.png" alt="Women" className="category-image" />
+              <div className="category-overlay">
+                <span className="category-title">Women</span>
+              </div>
+            </Link>
+            <Link href="/gender/men" className="category-card">
+              <img src="/images/men.png" alt="Men" className="category-image" />
+              <div className="category-overlay">
+                <span className="category-title">Men</span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" style={{ padding: '8rem 0' }}>
         <div className="container">
           <h2 className="section-title">Featured Editions</h2>
           <div className="product-grid">
-            {featuredProducts.length === 0 && <p className="text-center">No featured products available.</p>}
+            {featuredProducts.length === 0 && <p className="text-center" style={{ width: '100%', gridColumn: '1 / -1' }}>No featured products available.</p>}
             {featuredProducts.map((product) => (
               <Link
                 key={product.id}
@@ -77,7 +126,7 @@ export default async function HomePage() {
                       alt={product.name}
                     />
                   ) : (
-                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80" alt="Placeholder" />
+                    <img src="/images/hero.png" alt="Placeholder" />
                   )}
                   {product.badge && <span className={`badge ${product.badge}`}>{product.badge}</span>}
                 </div>
@@ -86,7 +135,7 @@ export default async function HomePage() {
                   <div className="price-row">
                     {product.salePrice ? (
                       <>
-                        <span className="original-price">${product.price}</span>
+                         <span className="original-price">${product.price}</span>
                         <span className="sale-price">${product.salePrice}</span>
                       </>
                     ) : (

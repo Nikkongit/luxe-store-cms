@@ -15,9 +15,9 @@ export const Footer = () => {
                         <h4>Shop</h4>
                         <ul>
                             <li><Link href="/products">All Products</Link></li>
-                            <li><Link href="/categories">Collections</Link></li>
-                            <li><Link href="/cart">Shopping Cart</Link></li>
-                            <li><Link href="/checkout">Checkout</Link></li>
+                            <li><Link href="/categories">Categories</Link></li>
+                            <li><Link href="/collections">Collections</Link></li>
+                            <li><Link href="/gender">Gender</Link></li>
                         </ul>
                     </div>
 
