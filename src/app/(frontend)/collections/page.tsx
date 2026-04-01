@@ -11,19 +11,19 @@ export default function CollectionsPage() {
         <div className="categories-grid">
            {/* Replace these place holders with generated images once added */}
           <Link href="/collections/winter" className="category-card">
-            <img src="/images/hero.png" alt="Winter Collection" className="category-image" />
+            <img src="/luxe-store-cms/images/hero.png" alt="Winter Collection" className="category-image" />
             <div className="category-overlay">
               <span className="category-title">Winter '26</span>
             </div>
           </Link>
           <Link href="/collections/summer" className="category-card">
-            <img src="/images/women.png" alt="Summer Collection" className="category-image" />
+            <img src="/luxe-store-cms/images/women.png" alt="Summer Collection" className="category-image" />
             <div className="category-overlay">
               <span className="category-title">Summer '26</span>
             </div>
           </Link>
           <Link href="/collections/essentials" className="category-card">
-            <img src="/images/men.png" alt="Essentials" className="category-image" />
+            <img src="/luxe-store-cms/images/men.png" alt="Essentials" className="category-image" />
             <div className="category-overlay">
               <span className="category-title">Essentials</span>
             </div>

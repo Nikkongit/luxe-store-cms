@@ -9,9 +9,9 @@ export default async function CategoriesPage() {
     // In this store, we define categories as hardcoded based on the Products schema options,
     // though there is also a categories collection. Let's just create aesthetic cards for the hardcoded ones.
     const productCategories = [
-        { name: 'Bags', slug: 'bags', image: '/images/bags.png' },
-        { name: 'Jewelry', slug: 'jewelry', image: '/images/jewelry.png' },
-        { name: 'Clothing', slug: 'clothing', image: '/images/women.png' },
+        { name: 'Bags', slug: 'bags', image: '/luxe-store-cms/images/bags.png' },
+        { name: 'Jewelry', slug: 'jewelry', image: '/luxe-store-cms/images/jewelry.png' },
+        { name: 'Clothing', slug: 'clothing', image: '/luxe-store-cms/images/women.png' },
     ]
 
     return (
