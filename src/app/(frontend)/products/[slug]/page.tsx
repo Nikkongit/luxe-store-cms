@@ -27,9 +27,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         return { title: 'Product Not Found | LUXE' }
     }
 
+    let desc = `Buy ${product.name} at LUXE Store.`
+    if (typeof product.description === 'string') {
+        desc = product.description
+    }
+
     return {
         title: `${product.name} | LUXE Store`,
-        description: product.description || `Buy ${product.name} at LUXE Store.`,
+        description: desc,
     }
 }
 

@@ -23,7 +23,7 @@ const emitChange = () => {
     if (typeof window !== 'undefined') {
         localStorage.setItem('luxe-cart', JSON.stringify(cart));
     }
-    for (let listener of listeners) {
+    for (const listener of listeners) {
         listener();
     }
 }

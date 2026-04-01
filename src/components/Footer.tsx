@@ -10,7 +10,7 @@ export const Footer = () => {
                     <div className="footer-info">
                         <h3>LUXE Store</h3>
                         <p style={{ marginTop: '1rem', color: 'var(--muted)', lineHeight: '1.6' }}>
-                          Founded with a passion for uncompromising quality, LUXE Store brings together the world's most refined essentials. From hand-crafted bags to timeless jewelry, we curate the finest pieces for the modern visionary. Experience authentic luxury with our secure, global shipping.
+                          Founded with a passion for uncompromising quality, LUXE Store brings together the world&apos;s most refined essentials. From hand-crafted bags to timeless jewelry, we curate the finest pieces for the modern visionary. Experience authentic luxury with our secure, global shipping.
                         </p>
                     </div>
                     
