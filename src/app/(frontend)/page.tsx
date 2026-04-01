@@ -5,6 +5,13 @@ import { getPayload } from 'payload'
 import React from 'react'
 import config from '@/payload.config'
 
+const dummyFeaturedProducts = [
+  { id: 'dummy1', slug: 'signature-leather-tote', name: 'Signature Leather Tote', price: 1250, image: '/luxe-store-cms/images/bags.png', badge: 'new' },
+  { id: 'dummy2', slug: 'diamond-tennis-bracelet', name: 'Diamond Tennis Bracelet', price: 3400, image: '/luxe-store-cms/images/jewelry.png' },
+  { id: 'dummy3', slug: 'cashmere-blend-coat', name: 'Cashmere Blend Coat', price: 890, image: '/luxe-store-cms/images/women.png' },
+  { id: 'dummy4', slug: 'silk-wrap-blouse', name: 'Silk Wrap Blouse', price: 450, salePrice: 380, image: '/luxe-store-cms/images/hero.png', badge: 'sale' }
+]
+
 export default async function HomePage() {
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })
@@ -108,11 +115,34 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="section" style={{ padding: '8rem 0' }}>
+      <section className="section" style={{ padding: '8rem 0', backgroundColor: 'var(--surface)' }}>
         <div className="container">
-          <h2 className="section-title">Featured Editions</h2>
+          <h2 className="section-title" style={{ marginBottom: '1rem' }}>Featured Editions</h2>
+          <p className="text-center" style={{ color: 'var(--muted)', maxWidth: '600px', margin: '0 auto 4rem auto', fontSize: '1.1rem', textAlign: 'center' }}>
+            Our handpicked selection of limited edition pieces. These exclusive designs represent the pinnacle of our craftsmanship, blending timeless elegance with modern sophistication.
+          </p>
           <div className="product-grid">
-            {featuredProducts.length === 0 && <p className="text-center" style={{ width: '100%', gridColumn: '1 / -1' }}>No featured products available.</p>}
+            {featuredProducts.length === 0 && dummyFeaturedProducts.map((product) => (
+              <Link key={product.id} href={`/products/${product.slug}`} className="product-card">
+                <div className="product-image-placeholder">
+                  <img src={product.image} alt={product.name} />
+                  {product.badge && <span className={`badge ${product.badge}`}>{product.badge}</span>}
+                </div>
+                <div className="product-info">
+                  <h3>{product.name}</h3>
+                  <div className="price-row">
+                    {product.salePrice ? (
+                      <>
+                        <span className="original-price">${product.price}</span>
+                        <span className="sale-price">${product.salePrice}</span>
+                      </>
+                    ) : (
+                      <span className="price">${product.price}</span>
+                    )}
+                  </div>
+                </div>
+              </Link>
+            ))}
             {featuredProducts.map((product) => (
               <Link
                 key={product.id}

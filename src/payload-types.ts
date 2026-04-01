@@ -213,6 +213,8 @@ export interface Product {
       }[]
     | null;
   category: 'bags' | 'jewelry' | 'clothing' | 'accessories';
+  gender?: ('women' | 'men' | 'unisex') | null;
+  storeCollection?: ('winter' | 'summer' | 'essentials') | null;
   badge?: ('new' | 'sale' | 'hot' | 'limited') | null;
   featured?: boolean | null;
   status: 'draft' | 'published' | 'archived';
@@ -424,6 +426,8 @@ export interface ProductsSelect<T extends boolean = true> {
         id?: T;
       };
   category?: T;
+  gender?: T;
+  storeCollection?: T;
   badge?: T;
   featured?: T;
   status?: T;

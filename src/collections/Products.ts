@@ -58,6 +58,24 @@ export const Products: CollectionConfig = {
             required: true,
         },
         {
+            name: 'gender',
+            type: 'select',
+            options: [
+                { label: 'Women', value: 'women' },
+                { label: 'Men', value: 'men' },
+                { label: 'Unisex', value: 'unisex' },
+            ],
+        },
+        {
+            name: 'storeCollection',
+            type: 'select',
+            options: [
+                { label: 'Winter', value: 'winter' },
+                { label: 'Summer', value: 'summer' },
+                { label: 'Essentials', value: 'essentials' },
+            ],
+        },
+        {
             name: 'badge',
             type: 'select',
             options: [

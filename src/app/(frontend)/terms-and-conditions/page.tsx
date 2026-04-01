@@ -1,23 +1,18 @@
 import React from 'react'
 
-export default function TermsAndConditionsPage() {
-  return (
-    <div className="container py-20 min-h-[60vh]">
-      <h1 className="text-4xl font-bold mb-6">Terms and Conditions</h1>
-      <div className="prose max-w-3xl space-y-4">
-        <p><strong>Effective Date:</strong> January 1, 2026</p>
-        <p>
-          Welcome to LUXE Store. By accessing or using our website, you agree to comply with and be bound by the following Terms and Conditions.
-        </p>
-        <h3 className="text-xl font-semibold mt-6">1. General Conditions</h3>
-        <p>We reserve the right to refuse service to anyone for any reason at any time. You understand that your content (not including credit card information) may be transferred unencrypted over various networks.</p>
-        
-        <h3 className="text-xl font-semibold mt-6">2. Products and Pricing</h3>
-        <p>Prices for our products are subject to change without notice. We reserve the right to modify or discontinue any product at any time. We shall not be liable to you or any third party for any modification, price change, or suspension of the service.</p>
-
-        <h3 className="text-xl font-semibold mt-6">3. Accuracy of Billing</h3>
-        <p>You agree to provide current, complete, and accurate purchase and account information for all purchases made at our store. You agree to promptly update your account and other information so we can complete your transactions.</p>
-      </div>
-    </div>
-  )
+export default function TermsConditionsPage() {
+    return (
+        <div className="container inner-page">
+            <h1 className="section-title" style={{ textAlign: 'left', marginBottom: '2rem', fontSize: '2.5rem' }}>Terms & Conditions</h1>
+            <div style={{ color: 'var(--muted)', maxWidth: '800px', lineHeight: '1.8' }}>
+                <p>Last updated: {new Date().toLocaleDateString()}</p>
+                <h3 style={{ marginTop: '2rem', color: 'var(--foreground)' }}>1. Agreement to Terms</h3>
+                <p>By accessing our website, you agree to be bound by these Terms and Conditions and agree that you are responsible for compliance with any applicable local laws.</p>
+                <h3 style={{ marginTop: '2rem', color: 'var(--foreground)' }}>2. Use License</h3>
+                <p>Permission is granted to temporarily download one copy of the materials (information or software) on LUXE Store's website for personal, non-commercial transitory viewing only.</p>
+                <h3 style={{ marginTop: '2rem', color: 'var(--foreground)' }}>3. Pricing and Availability</h3>
+                <p>All prices are subject to change without notice. We reserve the right to modify or discontinue products at any time without liability.</p>
+            </div>
+        </div>
+    )
 }

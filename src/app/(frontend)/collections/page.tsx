@@ -3,11 +3,13 @@ import Link from 'next/link';
 
 export default function CollectionsPage() {
   return (
-    <div className="page-header" style={{ padding: '120px 20px 60px' }}>
-      <h1>Collections</h1>
-      <p>Explore our exclusive curated collections.</p>
+    <div className="collections-page inner-page">
+      <header className="page-header">
+        <h1>Collections</h1>
+        <p>Explore our exclusive curated collections.</p>
+      </header>
       
-      <div className="container" style={{ marginTop: '4rem' }}>
+      <div className="container">
         <div className="categories-grid">
            {/* Replace these place holders with generated images once added */}
           <Link href="/collections/winter" className="category-card">

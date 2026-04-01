@@ -1,6 +1,10 @@
 import Link from 'next/link'
 import React from 'react'
 
+import { ThemeToggle } from './ThemeToggle'
+import { CartDrawer } from './CartDrawer'
+import { UserNav } from './UserNav'
+
 export const Header = () => {
     return (
         <header className="header">
@@ -15,8 +19,9 @@ export const Header = () => {
                     <Link href="/gender">Gender</Link>
                 </nav>
                 <div className="auth-links">
-                    <Link href="/cart" className="action-btn">Cart (0)</Link>
-                    <Link href="/admin" className="action-btn">Portal</Link>
+                    <ThemeToggle />
+                    <CartDrawer />
+                    <UserNav />
                 </div>
             </div>
         </header>

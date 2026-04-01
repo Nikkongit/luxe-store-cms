@@ -3,11 +3,13 @@ import Link from 'next/link';
 
 export default function GenderPage() {
   return (
-    <div className="page-header" style={{ padding: '120px 20px 60px' }}>
-      <h1>Shop by Gender</h1>
-      <p>Discover styles crafted for everyone.</p>
-
-      <div className="container" style={{ marginTop: '4rem' }}>
+    <div className="gender-page inner-page">
+      <header className="page-header">
+        <h1>Shop by Gender</h1>
+        <p>Find pieces tailored to you.</p>
+      </header>
+      
+      <div className="container">
         <div className="categories-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
           <Link href="/gender/women" className="category-card">
             <img src="/luxe-store-cms/images/women.png" alt="Women" className="category-image" />

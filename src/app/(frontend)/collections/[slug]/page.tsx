@@ -1,11 +1,9 @@
 import { getPayload } from 'payload'
 import config from '@/payload.config'
-import { notFound } from 'next/navigation'
-import Link from 'next/link'
 import React from 'react'
 import { ProductGrid } from '@/components/ProductGrid'
 
-export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function CollectionsSlugPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params
     const payload = await getPayload({ config: await config })
 
@@ -14,20 +12,19 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
         where: {
             and: [
                 { status: { equals: 'published' } },
-                { category: { equals: slug } }
+                { storeCollection: { equals: slug } }
             ]
         }
     })
 
-    // Format category name for title
-    const categoryTitle = slug.charAt(0).toUpperCase() + slug.slice(1)
+    const collectionTitle = slug.charAt(0).toUpperCase() + slug.slice(1)
 
     return (
         <div className="category-page inner-page">
             <div className="container">
                 <header className="page-header">
-                    <h1>{categoryTitle}</h1>
-                    <p>Discover our exclusive selection of {slug}.</p>
+                    <h1>{collectionTitle} Collection</h1>
+                    <p>Discover our exclusive selection of the {collectionTitle} collection.</p>
                 </header>
 
                 <ProductGrid products={products} />

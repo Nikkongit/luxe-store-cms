@@ -15,7 +15,7 @@ export default async function CategoriesPage() {
     ]
 
     return (
-        <div className="categories-list-page" style={{ paddingTop: '120px' }}>
+        <div className="categories-list-page inner-page">
             <div className="container">
                 <header className="page-header">
                     <h1>Categories</h1>
