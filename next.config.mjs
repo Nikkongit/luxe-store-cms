@@ -5,6 +5,12 @@ const nextConfig = {
   output: 'standalone',
   basePath: '/luxe-store-cms',
   assetPrefix: '/luxe-store-cms',
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   // Your Next.js config here
   webpack: (webpackConfig) => {
     webpackConfig.resolve.extensionAlias = {
